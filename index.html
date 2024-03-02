@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunting phone Api</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="container mx-auto my-5">
+        <h1 class="text-8xl font-extrabold text-center">Hunting Phone Api</h1>
+    </header>
+    <main>
+
+        <section class="container mx-auto my-5 flex gap-2">
+            <label class=" w-96 input input-bordered flex justify-between items-center gap-2 bg-neutral-800">
+                <input id="search-filed" type="text" placeholder="Search" class="text-white" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70 text-slate-300"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd"/></svg>
+                
+              </label>
+              <button onclick="handalSarch()" class="btn btn-neutral font-bold">Search</button>
+        </section>
+        <section class="container mx-auto">
+            <div class="text-center">
+                <span id="spinner" class="loading loading-spinner text-secondary my-40 items-center hidden"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+             
+            </div>
+
+            <div class="my-5 text-center">
+                <button id="moreButton" class="btn btn-neutral font-bold hidden" onclick="handalMoreButton()">show more</button>
+            </div>
+
+            <!-- modal -->
+                        <!-- Open the modal using ID.showModal() method -->
+            <dialog id="show_model_deteles" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box text-center">
+                <h3 id="deteles-phone-name" class="font-bold text-3xl"></h3>
+                
+                <div id="deteles-container" class="flex flex-col justify-center items-center ">
+
+                </div>
+
+                <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn bg-red-600 border-none text-white px-10">Close</button>s
+                </form>
+                </div>
+            </div>
+            </dialog>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+    <script src="script/phone.js"></script>
+</body>
+</html>
